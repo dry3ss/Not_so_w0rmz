@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour {
 
 
     public int damage = 1;
-    public bool is_enemy_shot = false;
     // Use this for initialization
     void Start()
     {

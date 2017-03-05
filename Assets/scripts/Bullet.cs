@@ -17,4 +17,16 @@ public class Bullet : MonoBehaviour {
     void Update () {
 		
 	}
+
+    void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        // Is this a shot?
+        Health player = otherCollider.gameObject.GetComponent<Health>();
+        if (player != null)
+        {
+            player.Damage(damage);
+        }
+        // Destroy the shot
+        Destroy(this.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+    }
 }

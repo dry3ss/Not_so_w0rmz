@@ -26,6 +26,9 @@ public class Bullet : MonoBehaviour {
         {
             player.Damage(damage);
         }
+
+        Collider[] allUnit = Physics.OverlapSphere(this.transform.position, 1);
+
         // Destroy the shot
         Destroy(this.gameObject); // Remember to always target the game object, otherwise you will just remove the script
     }

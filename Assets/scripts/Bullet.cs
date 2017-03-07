@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour {
 
 
     public int damage = 1;
-    public bool is_enemy_shot = false;
     // Use this for initialization
     void Start()
     {
@@ -18,4 +17,19 @@ public class Bullet : MonoBehaviour {
     void Update () {
 		
 	}
+
+    void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        // Is this a shot?
+        Health player = otherCollider.gameObject.GetComponent<Health>();
+        if (player != null)
+        {
+            player.Damage(damage);
+        }
+
+        Collider[] allUnit = Physics.OverlapSphere(this.transform.position, 1);
+
+        // Destroy the shot
+        Destroy(this.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+    }
 }

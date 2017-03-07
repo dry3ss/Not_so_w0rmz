@@ -23,14 +23,18 @@ public class WeaponScript : MonoBehaviour
     }
 
     //spawn_angle in degrees
-    public void Attack(Vector2 spawn_position)
+    public void Attack()
    {
         if(current_cooldown <= 0f)
         {
+            Vector3 spawn_position = this.transform.position;
+            Vector3 current_direction = this.transform.right;
+            spawn_position+= current_direction;//current direction is normalized
+
             var projectile = Instantiate(projectile_prefab) as Transform;
             projectile.position = spawn_position;
 
-            Vector3 current_direction = this.transform.right;
+            
             //rotate the sprite of the projectile to face the right direction
             projectile.Rotate(new Vector3(0,0, 180+getAngleZDegreesFromDirection(current_direction)));
             //add the initial velocity with the right angle

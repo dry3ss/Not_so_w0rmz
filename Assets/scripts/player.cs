@@ -39,8 +39,7 @@ public class Player : MonoBehaviour {
         WeaponScript attack_weapon;        
         if (weapons.TryGetValue((int)WeaponsTypes.MachineGun, out attack_weapon))
         {
-            Vector3 spawn_pos = this.transform.position;
-            attack_weapon.Attack(spawn_pos);
+            attack_weapon.Attack();
         }
         
 

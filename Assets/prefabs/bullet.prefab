@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 61085653508793042}
   - component: {fileID: 50729374781071202}
   - component: {fileID: 114903856789263476}
-  - component: {fileID: 114702236003486168}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -37,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1835836356201738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.62, y: -1.8, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.9338727, y: 2.0481753, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,24 +72,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.66, y: 0.36}
---- !u!114 &114702236003486168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1835836356201738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 589023a068b0a9e40ac26a6558bde62e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 2, y: 2}
-  direction: {x: -1, y: 0}
 --- !u!114 &114903856789263476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +89,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  is_enemy_shot: 0
 --- !u!212 &212404238030676486
 SpriteRenderer:
   m_ObjectHideFlags: 1

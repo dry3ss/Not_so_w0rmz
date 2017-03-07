@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        WeaponScript machine_gun=GetComponent<MachineGunScript>();
+        WeaponScript machine_gun=this.GetComponentInChildren<MachineGunScript>();
         if (machine_gun != null)
             weapons.Add((int)WeaponsTypes.MachineGun, machine_gun);
     }

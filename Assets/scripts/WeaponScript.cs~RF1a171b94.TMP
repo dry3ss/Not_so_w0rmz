@@ -27,11 +27,20 @@ public class WeaponScript : MonoBehaviour
    {
         if(current_cooldown <= 0f)
         {
-            Vector3 current_direction = this.transform.up;
-            var q = Quaternion.FromToRotation(Vector3.left, current_direction);
-            var projectile = Instantiate(projectile_prefab, transform.position+current_direction, q);
+            Vector3 spawn_position = this.transform.position;
+            Vector3 current_direction = this.transform.right;
+            spawn_position+= current_direction;//current direction is normalized
+
+            var projectile = Instantiate(projectile_prefab) as Transform;
+            projectile.position = spawn_position;
+
+            
+            //rotate the sprite of the projectile to face the right direction
+            projectile.Rotate(new Vector3(0,0, 180+getAngleZDegreesFromDirection(current_direction)));
+            //add the initial velocity with the right angle
             Rigidbody2D proj_rb = projectile.GetComponent<Rigidbody2D>();
-            proj_rb.velocity = initial_velocity * current_direction;
+            proj_rb.velocity = initial_velocity*current_direction;
+
 
             current_cooldown += cooldown;
         }
